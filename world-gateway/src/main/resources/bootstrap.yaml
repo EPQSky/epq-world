@@ -1,0 +1,21 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: world-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+    loadbalancer:
+      retry:
+        enabled: true
+  profiles:
+    active: dev
