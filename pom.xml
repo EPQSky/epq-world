@@ -13,6 +13,9 @@
         <module>world-service</module>
         <module>world-service-api</module>
         <module>world-public</module>
+        <module>world-pay</module>
+        <module>push</module>
+        <module>world-push</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -2,7 +2,6 @@ package icu.epq.common.api;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import java.io.Serializable;
 
@@ -12,7 +11,6 @@ import java.io.Serializable;
  * @author EPQ
  */
 @Data
-@ToString
 @NoArgsConstructor
 public class R<T> implements Serializable {
 

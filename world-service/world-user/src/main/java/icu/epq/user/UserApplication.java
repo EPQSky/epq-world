@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
  *
  * @author wangtian
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"icu.epq.common.exception", "icu.epq.user"})
 @EnableDiscoveryClient
 @EnableAsync
 public class UserApplication {

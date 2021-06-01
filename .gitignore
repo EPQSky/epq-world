@@ -11,3 +11,6 @@ gen
 **/target
 
 **/**/test
+
+# alibaba pay
+world-pay/src/main/resources/key

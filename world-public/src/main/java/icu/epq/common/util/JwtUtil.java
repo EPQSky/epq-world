@@ -55,6 +55,9 @@ public class JwtUtil {
     }
 
     public static BaseGranter parseJwtToken(String token) {
+        if (token.isEmpty()) {
+            throw new WorldException(R.fail("token为空"));
+        }
 
         String accessToken;
         try {
