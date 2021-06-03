@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import icu.epq.gateway.provider.ResponseProvider;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.web.reactive.error.ErrorWebExceptionHandler;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
@@ -22,6 +23,7 @@ import reactor.core.publisher.Mono;
  *
  * @author epqsky
  */
+@Slf4j
 @Order(-1)
 @Configuration
 @RequiredArgsConstructor
@@ -50,7 +52,7 @@ public class ErrorExceptionHandler implements ErrorWebExceptionHandler {
                 }
                 return bufferFactory.wrap(objectMapper.writeValueAsBytes(ResponseProvider.response(status.value(), buildMessage(request, throwable))));
             } catch (JsonProcessingException e) {
-                e.printStackTrace();
+                log.error(e.getMessage());
                 return bufferFactory.wrap(new byte[0]);
             }
         }));

@@ -14,7 +14,7 @@ import lombok.EqualsAndHashCode;
 @Data
 public class WorldException extends RuntimeException {
 
-    private R<?> resp;
+    private final R<?> resp;
 
     public WorldException(R<?> resp) {
         this.resp = resp;

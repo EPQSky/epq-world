@@ -4,7 +4,6 @@ import icu.epq.common.api.R;
 import icu.epq.common.exception.WorldException;
 import icu.epq.user.entity.User;
 import icu.epq.user.service.IUserService;
-import icu.epq.user.vo.UserVO;
 import icu.epq.user.wrapper.UserWrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -28,7 +27,7 @@ public class UserController {
 
     @GetMapping("detail")
     @ApiOperation(value = "详情", notes = "传入id")
-    public R<UserVO> detail(Integer id) {
+    public R<User> detail(Integer id) {
         User detail = userService.getById(id);
         if (detail == null) {
             throw new WorldException(R.fail("用户信息不存在"));

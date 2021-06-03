@@ -23,6 +23,10 @@ import java.util.*;
  */
 public class JwtUtil {
 
+    private JwtUtil() {
+
+    }
+
     /**
      * JWT密钥
      */

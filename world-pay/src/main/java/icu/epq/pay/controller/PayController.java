@@ -2,6 +2,8 @@ package icu.epq.pay.controller;
 
 import com.alipay.easysdk.factory.Factory;
 import com.alipay.easysdk.payment.page.models.AlipayTradePagePayResponse;
+import icu.epq.common.api.R;
+import icu.epq.common.exception.WorldException;
 import icu.epq.pay.config.AlipayConfig;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,8 +36,7 @@ public class PayController {
             out.flush();
             out.close();
         } catch (Exception e) {
-            System.err.println("调用遭遇异常，原因：" + e.getMessage());
-            throw new RuntimeException(e.getMessage(), e);
+            throw new WorldException(R.fail("调用遭遇异常，原因：" + e.getMessage()));
         }
 
     }

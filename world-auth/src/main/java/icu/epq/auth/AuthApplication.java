@@ -11,7 +11,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
  *
  * @author epqsky
  */
-@SpringBootApplication(scanBasePackages = {"icu.epq.common.exception", "icu.epq.auth"})
+@SpringBootApplication(scanBasePackages = {"icu.epq.common.exception", "icu.epq.log", "icu.epq.auth"})
 @EnableDiscoveryClient
 @EnableAsync
 @EnableFeignClients(basePackages = "icu.epq.user.feign")

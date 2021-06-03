@@ -18,6 +18,11 @@
     <dependencies>
         <dependency>
             <groupId>icu.epq.epq-world</groupId>
+            <artifactId>world-log</artifactId>
+            <version>${epq-world.project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>icu.epq.epq-world</groupId>
             <artifactId>world-public</artifactId>
             <version>${epq-world.project.version}</version>
         </dependency>

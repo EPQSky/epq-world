@@ -4,6 +4,8 @@ import icu.epq.common.api.R;
 import icu.epq.common.exception.WorldException;
 import icu.epq.common.granter.BaseGranter;
 import icu.epq.common.util.JwtUtil;
+import icu.epq.log.annotation.ActionLog;
+import icu.epq.log.annotation.ApiLog;
 import icu.epq.user.entity.User;
 import icu.epq.user.feign.IUserClient;
 import io.swagger.annotations.Api;
@@ -26,6 +28,8 @@ public class AuthController {
     private final IUserClient userClient;
 
     @PostMapping("/token")
+    @ApiLog
+    @ActionLog
     @ApiOperation(value = "获取认证token", notes = "输入账号、密码")
     public R<BaseGranter> token(@RequestParam String account, @RequestParam String password) {
         User user = userClient.getUserByAccount(account);

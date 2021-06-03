@@ -15,6 +15,7 @@
         <module>world-public</module>
         <module>world-pay</module>
         <module>world-push</module>
+        <module>world-log</module>
     </modules>
     <packaging>pom</packaging>
 

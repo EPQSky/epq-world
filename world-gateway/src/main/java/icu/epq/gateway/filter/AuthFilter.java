@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import icu.epq.gateway.provider.ResponseProvider;
 import icu.epq.gateway.util.JwtUtil;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
@@ -25,6 +26,7 @@ import java.util.Date;
  *
  * @author epqsky
  */
+@Slf4j
 @Component
 @AllArgsConstructor
 public class AuthFilter implements GlobalFilter, Ordered {
@@ -63,7 +65,7 @@ public class AuthFilter implements GlobalFilter, Ordered {
         try {
             result = objectMapper.writeValueAsString(ResponseProvider.unAuth(msg));
         } catch (JsonProcessingException e) {
-            System.out.println(e.getMessage());
+            log.error(e.getMessage());
         }
         DataBuffer buffer = resp.bufferFactory().wrap(result.getBytes(StandardCharsets.UTF_8));
         return resp.writeWith(Flux.just(buffer));

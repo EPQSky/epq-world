@@ -25,6 +25,10 @@ import java.util.Map;
  */
 public class ResponseProvider {
 
+    private ResponseProvider() {
+
+    }
+
     /**
      * 成功
      *

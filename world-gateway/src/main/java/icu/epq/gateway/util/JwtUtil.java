@@ -20,6 +20,10 @@ import java.util.Base64;
  */
 public class JwtUtil {
 
+    private JwtUtil() {
+
+    }
+
     /**
      * JWT密钥
      */

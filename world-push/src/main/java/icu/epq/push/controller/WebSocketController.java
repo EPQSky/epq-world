@@ -20,7 +20,6 @@ public class WebSocketController {
     @MessageMapping("/ws/message")
     @KafkaListener(topics = {"${spring.kafka.template.default-topic}"})
     public void handleMessage(String message) {
-        System.out.println(message);
         simpMessagingTemplate.convertAndSendToUser("epq", "/topic/message", message);
     }
 

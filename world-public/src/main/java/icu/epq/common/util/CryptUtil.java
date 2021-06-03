@@ -18,6 +18,10 @@ import java.util.Base64;
  */
 public class CryptUtil {
 
+    private CryptUtil() {
+
+    }
+
     /**
      * 密钥
      */
