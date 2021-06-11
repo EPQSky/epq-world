@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class WebSocketController {
 
-    private final SimpMessagingTemplate simpMessagingTemplate;
-
-    @MessageMapping("/ws/message")
-    @KafkaListener(topics = {"${spring.kafka.template.default-topic}"})
-    public void handleMessage(String message) {
-        simpMessagingTemplate.convertAndSendToUser("epq", "/topic/message", message);
-    }
+//    private final SimpMessagingTemplate simpMessagingTemplate;
+//
+//    @MessageMapping("/ws/message")
+//    @KafkaListener(topics = {"${spring.kafka.template.default-topic}"})
+//    public void handleMessage(String message) {
+//        simpMessagingTemplate.convertAndSendToUser("epq", "/topic/message", message);
+//    }
 
 }
